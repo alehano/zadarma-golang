@@ -13,10 +13,9 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"unicode/utf8"
 )
 
-//New is main struct
+// New is main struct
 type New struct {
 	APIUserKey         string
 	APISecretKey       string
@@ -30,7 +29,7 @@ type New struct {
 	Signature          string
 }
 
-//Request is request to API Zadarma "https://api.zadarma.com"
+// Request is request to API Zadarma "https://api.zadarma.com"
 func (z *New) Request(slb *[]byte) error {
 
 	if len(z.ParamsUrlValues) == 0 {
@@ -73,11 +72,11 @@ func prepareData(z *New) (string, error) {
 	if z.APIMethod == "" {
 		return "", errors.New("error: APIMethod is empty! example: \"/v1/info/balance/\"")
 	}
-	if z.APIUserKey == "" || utf8.RuneCountInString(z.APIUserKey) != 20 {
-		return "", errors.New("error: APIUserKey is empty or length != 20 runes! example: \"e27e28c201943883f77e\"")
+	if z.APIUserKey == "" {
+		return "", errors.New("error: APIUserKey is empty")
 	}
-	if z.APISecretKey == "" || utf8.RuneCountInString(z.APISecretKey) != 20 {
-		return "", errors.New("error: APISecretKey is empty or length != 20 runes! example: \"e27e28c201943883f77e\"")
+	if z.APISecretKey == "" {
+		return "", errors.New("error: APISecretKey is empty")
 	}
 	//priority of incoming parameters
 	//high ParamsUrlValues
