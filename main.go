@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"net/url"
 
-	zApi "github.com/gravitymir/zadarma-golang/v1"
+	zApi "github.com/alehano/zadarma-golang/v1"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func infoTimezone() error {
 	return nil
 }
 
-//HTTPMethod Post
+// HTTPMethod Post
 func smsSend() error {
 
 	sms := zApi.New{

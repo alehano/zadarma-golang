@@ -1,3 +1,3 @@
-module github.com/gravitymir/zadarma-golang
+module github.com/alehano/zadarma-golang
 
 go 1.16

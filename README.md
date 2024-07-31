@@ -1,25 +1,26 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/gravitymir/zadarma-golang?logo=github)
 ![Github Repository Size](https://img.shields.io/github/repo-size/gravitymir/zadarma-golang?logo=github)
-[![Github forks](https://img.shields.io/github/forks/gravitymir/zadarma-golang?logo=github)](https://github.com/gravitymir/zadarma-golang/network/members)
-![Lines of code](https://img.shields.io/tokei/lines/github.com/gravitymir/zadarma-golang?logo=github)
-[![GitHub open issues](https://img.shields.io/github/issues/gravitymir/zadarma-golang?logo=github)](https://github.com/gravitymir/zadarma-golang/issues)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/gravitymir/zadarma-golang?logo=github)](https://github.com/gravitymir/zadarma-golang/issues)
+[![Github forks](https://img.shields.io/github/forks/gravitymir/zadarma-golang?logo=github)](https://github.com/alehano/zadarma-golang/network/members)
+![Lines of code](https://img.shields.io/tokei/lines/github.com/alehano/zadarma-golang?logo=github)
+[![GitHub open issues](https://img.shields.io/github/issues/gravitymir/zadarma-golang?logo=github)](https://github.com/alehano/zadarma-golang/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/gravitymir/zadarma-golang?logo=github)](https://github.com/alehano/zadarma-golang/issues)
 
-[![made-with-Go](https://img.shields.io/badge/Zadarma-Go-00aed8?logo=go)](https://pkg.go.dev/github.com/gravitymir/zadarma-golang/zadarma)
+[![made-with-Go](https://img.shields.io/badge/Zadarma-Go-00aed8?logo=go)](https://pkg.go.dev/github.com/alehano/zadarma-golang/zadarma)
 [![Golang go.mod Go version](https://img.shields.io/github/go-mod/go-version/gravitymir/zadarma-golang?label=mod&logo=go)](https://pkg.go.dev/search?q=zadarma)
-[![GoReportCard](https://goreportcard.com/badge/github.com/gravitymir/zadarma-golang)](https://goreportcard.com/report/github.com/gravitymir/zadarma-golang)
+[![GoReportCard](https://goreportcard.com/badge/github.com/alehano/zadarma-golang)](https://goreportcard.com/report/github.com/alehano/zadarma-golang)
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/gravitymir/zadarma-golang?label=zadarma-golang&logo=github&color=505050&logoColor=fff)](https://github.com/gravitymir/zadarma-golang)
+[![GitHub Repo stars](https://img.shields.io/github/stars/gravitymir/zadarma-golang?label=zadarma-golang&logo=github&color=505050&logoColor=fff)](https://github.com/alehano/zadarma-golang)
 [![GitHub User's stars](https://img.shields.io/github/stars/gravitymir?label=gravitymir&logo=github&color=505050&logoColor=fff)](https://github.com/gravitymir)
 
 ![Zadarma Golang](https://raw.githubusercontent.com/gravitymir/zadarma-golang/master/zadarma_golang.jpg)
 
 # zadarma-golang
+
 Library which help you work with API Zadarma (v1)
 
-
 ## Main file for next examples
-``` go
+
+```go
 package main
 
 import (
@@ -28,7 +29,7 @@ import (
 	"net/http"
 	"net/url"
 
-	zApi "github.com/gravitymir/zadarma-golang/v1"
+	zApi "github.com/alehano/zadarma-golang/v1"
 )
 
 func main() {
@@ -62,7 +63,7 @@ func prettyPrint(data interface{}) {
 <a href="https://zadarma.com/ru/support/api/#api_info_balance" target="_parent">
 https://zadarma.com/ru/support/api/#api_info_balance</a>
 
-``` go
+```go
 func infoBalance() error {
 
 	balance := zApi.New{
@@ -99,7 +100,8 @@ func infoBalance() error {
 ## Example Price
 
 [https://zadarma.com/ru/support/api/#api_info_price](https://zadarma.com/ru/support/api/#api_info_price)
-``` go
+
+```go
 func infoPrice() error {
 
 	priceKazakhstan := zApi.New{
@@ -207,7 +209,8 @@ func infoPrice() error {
 ## Get statistics
 
 [https://zadarma.com/ru/support/api/#api_statistic](https://zadarma.com/ru/support/api/#api_statistic)
-``` go
+
+```go
 func statistics() error {
 
 	type CatchStatistics struct {
@@ -265,12 +268,13 @@ func statistics() error {
 ## Get timezone
 
 [https://zadarma.com/ru/support/api/#api_info_timezone](https://zadarma.com/ru/support/api/#api_info_timezone)
-``` go
+
+```go
 func infoTimezone() error {
 
     key   := "e30e16c201343883f77e"
 	secret := "dbf5606ea4c1f2234201"
-	
+
     timeZone := zApi.New{
 		APIMethod:    "/v1/info/timezone/",
 		APIUserKey:   key,
@@ -291,7 +295,7 @@ func infoTimezone() error {
 
 [https://zadarma.com/ru/support/api/#api_sms_send](https://zadarma.com/ru/support/api/#api_sms_send)
 
-``` go
+```go
 func smsSend() error {
 
 	sms := zApi.New{
